@@ -3,17 +3,6 @@ Emacs binding for the Clojure [Clay](https://scicloj.github.io/clay/) tool
 
 ## Usage
 
-Using [use-package](https://github.com/jwiegley/use-package):
-
-```clj
-(use-package clay
-  :straight (clay
-             :type git
-             :host github
-             :repo "scicloj/clay.el"))
-```
-
-Please load the [clay.el](https://github.com/scicloj/clay.el) package.
 Using [use-package](https://github.com/jwiegley/use-package), you may load the package as follows:
 
 ```elisp
