@@ -3,8 +3,6 @@
 <img src="https://raw.githubusercontent.com/scicloj/graphic-design/live/icons/Clay.svg" alt="Clay" align="right" width="128"/>
 <img src="https://www.gnu.org/savannah-checkouts/gnu/emacs/images/emacs.png" alt="Emacs" align="right" width="128"/>
 
----------------
-
 Emacs binding for the [Clay](https://scicloj.github.io/clay/) tool (data visualization and literate programming in Clojure)
 
 
