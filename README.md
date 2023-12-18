@@ -1,5 +1,5 @@
 # clay.el
-Emacs binding for the Clojure [Clay](https://scicloj.github.io/clay/) tool
+Emacs binding for the [Clay](https://scicloj.github.io/clay/) tool (data visualization and literate programming in Clojure)
 
 ## Usage
 
