@@ -1,6 +1,6 @@
 ;;; clay.el --- Emacs commands for the Clay tool for literate programming and data visualization in Clojure  -*- lexical-binding: t; -*-
 
-;; Copyright (C) 2023  daslu
+;; Copyright (C) 2023 Scicloj
 
 ;; Author: daslu
 ;; Keywords: lisp
