@@ -8,6 +8,8 @@ Emacs binding for the [Clay](https://scicloj.github.io/clay/) tool (data visuali
 
 ## Usage
 
+### Loading the package
+
 Using [use-package](https://github.com/jwiegley/use-package) and [straight](https://github.com/radian-software/straight.el), you may load the package as follows:
 
 ```elisp
@@ -24,6 +26,8 @@ Using [use-package](https://github.com/jwiegley/use-package) and [vc-use-package
 (use-package clay
   :vc (:fetcher github :repo scicloj/clay.el))
 ```
+  
+### API
   
   The package offers the following functions, that you may wish to create keybindings for:
   |name|function|
