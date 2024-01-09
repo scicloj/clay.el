@@ -47,6 +47,7 @@ E.g., \"/ssh:myserver:/home/myuser/myfile\" `-->' \"/home/myuser/myfile\""
   t)
 
 (defun clay/make-ns (format)
+  "Save this Clojure buffer, and render it at the desired FORMAT."
   (save-buffer)
   (clay/require)
   (let ((filename (clay/clean-buffer-file-name)))
@@ -77,6 +78,7 @@ E.g., \"/ssh:myserver:/home/myuser/myfile\" `-->' \"/home/myuser/myfile\""
   (clay/make-ns "[:quarto :revealjs]"))
 
 (defun clay/make-form (code)
+  "Render a given piece of Clojure CODE."
   (clay/require)
   (let ((filename (clay/clean-buffer-file-name)))
     (cider-interactive-eval
