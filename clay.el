@@ -76,17 +76,10 @@ E.g., \"/ssh:myserver:/home/myuser/myfile\" `-->' \"/home/myuser/myfile\""
   (clay/require)
   (clay/make-ns "[:quarto :revealjs]"))
 
-(defun clay/cider-interactive-notify-and-eval (code)
-  (cider-interactive-eval
-   code
-   (cider-interactive-eval-handler nil (point))
-   nil
-   nil))
-
 (defun clay/make-form (code)
   (clay/require)
   (let ((filename (clay/clean-buffer-file-name)))
-    (clay/cider-interactive-notify-and-eval
+    (cider-interactive-eval
      (concat "(scicloj.clay.v2.api/make! {:format [:html] :source-path \""
              filename
              "\" :single-form (quote "
