@@ -47,12 +47,14 @@
 (defun clay/make-ns (format)
   (save-buffer)
   (clay/require)
-  (let
-      ((filename
-        (clay/clean-buffer-file-name)))
+  (let ((filename (clay/clean-buffer-file-name)))
     (when filename
       (cider-interactive-eval
-       (concat "(scicloj.clay.v2.api/make! {:format " format " :source-path \"" filename "\" })")))))
+       (concat "(scicloj.clay.v2.api/make! {:format "
+               format
+               " :source-path \""
+               filename
+               "\" })")))))
 
 (defun clay/make-ns-html ()
   (interactive)
@@ -78,11 +80,13 @@
 
 (defun clay/make-form (code)
   (clay/require)
-  (let
-      ((filename
-        (clay/clean-buffer-file-name)))
+  (let ((filename (clay/clean-buffer-file-name)))
     (clay/cider-interactive-notify-and-eval
-     (concat "(scicloj.clay.v2.api/make! {:format [:html] :source-path \"" filename "\" :single-form (quote " code")})"))))
+     (concat "(scicloj.clay.v2.api/make! {:format [:html] :source-path \""
+             filename
+             "\" :single-form (quote "
+             code
+             ")})"))))
 
 (defun clay/make-last-sexp ()
   (interactive)
