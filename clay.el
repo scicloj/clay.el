@@ -25,19 +25,21 @@
 ;;; Code:
 
 (defun clay/clean-buffer-file-name ()
-  ;; Clean up the buffer file name in TRAMP situations.
-  ;; E.g., "/ssh:myserver:/home/myuser/myfile" --> "/home/myuser/myfile"
+  "Clean up the buffer file name in TRAMP situations.
+E.g., \"/ssh:myserver:/home/myuser/myfile\" `-->' \"/home/myuser/myfile\""
   (replace-regexp-in-string "^.*:"
                             ""
                             (buffer-file-name)))
 
 (defun clay/require ()
+  "Require the Clay API in your Clojure REPL."
   (interactive)
   (cider-interactive-eval "
     (require '[scicloj.clay.v2.api])")
   t)
 
 (defun clay/start ()
+  "Start Clay if not started yet."
   (interactive)
   (clay/require)
   (cider-interactive-eval "
@@ -57,16 +59,19 @@
                "\" })")))))
 
 (defun clay/make-ns-html ()
+  "Save this Clojure buffer, render it as HTML, and show that in the browser view."
   (interactive)
   (clay/require)
   (clay/make-ns "[:html]"))
 
 (defun clay/make-ns-quarto-html ()
+  "Save this Clojure buffer, render it as Quarto, render that as HTML, and show that in the browser view."
   (interactive)
   (clay/require)
   (clay/make-ns "[:quarto :html]"))
 
 (defun clay/make-ns-quarto-revealjs ()
+  "Save this Clojure buffer, render it as Quarto, render that as a reveal.js slideshow, and show that in the browser view."
   (interactive)
   (clay/require)
   (clay/make-ns "[:quarto :revealjs]"))
@@ -89,10 +94,12 @@
              ")})"))))
 
 (defun clay/make-last-sexp ()
+  "Render the last Clojure s-expression."
   (interactive)
   (clay/make-form (cider-last-sexp)))
 
 (defun clay/make-defun-at-point ()
+  "Render the Clojure s-expression which is the defun-at-point."
   (interactive)
   (clay/make-form (thing-at-point 'defun)))
 
