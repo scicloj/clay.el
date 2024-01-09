@@ -1,7 +1,6 @@
 # clay.el
 
-<img src="https://raw.githubusercontent.com/scicloj/graphic-design/live/icons/Clay.svg" alt="Clay" align="right" width="128"/>
-<img src="https://www.gnu.org/savannah-checkouts/gnu/emacs/images/emacs.png" alt="Emacs" align="right" width="128"/>
+[![License GPL 3][badge-license]](http://www.gnu.org/licenses/gpl-3.0.txt)
 
 Emacs binding for the [Clay](https://scicloj.github.io/clay/) tool (data visualization and literate programming in Clojure)
 
@@ -39,3 +38,10 @@ Using [use-package](https://github.com/jwiegley/use-package) and [vc-use-package
   |`clay/make-last-sexp`|render the last s-expression|
   |`clay/make-defun-at-point`|render the [defun-at-point](https://www.emacswiki.org/emacs/ThingAtPoint)|
 
+## License
+
+Clay.el is distributed under the GNU General Public License, version 3.
+
+Copyright © 2024 Scicloj
+
+[badge-license]: https://img.shields.io/badge/license-GPL_3-green.svg
