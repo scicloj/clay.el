@@ -60,19 +60,27 @@ E.g., \"/ssh:myserver:/home/myuser/myfile\" `-->' \"/home/myuser/myfile\""
                "\" })")))))
 
 (defun clay/make-ns-html ()
-  "Save this Clojure buffer, render it as HTML, and show that in the browser view."
+  "Save this Clojure buffer,
+render it as HTML,
+and show that in the browser view."
   (interactive)
   (clay/require)
   (clay/make-ns "[:html]"))
 
 (defun clay/make-ns-quarto-html ()
-  "Save this Clojure buffer, render it as Quarto, render that as HTML, and show that in the browser view."
+  "Save this Clojure buffer,
+render it as Quarto,
+render that as HTML,
+and show that in the browser view."
   (interactive)
   (clay/require)
   (clay/make-ns "[:quarto :html]"))
 
 (defun clay/make-ns-quarto-revealjs ()
-  "Save this Clojure buffer, render it as Quarto, render that as a reveal.js slideshow, and show that in the browser view."
+  "Save this Clojure buffer,
+render it as Quarto,
+render that as a reveal.js slideshow,
+and show that in the browser view."
   (interactive)
   (clay/require)
   (clay/make-ns "[:quarto :revealjs]"))
