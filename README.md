@@ -7,7 +7,11 @@ Emacs binding for the [Clay](https://scicloj.github.io/clay/) tool (data visuali
 
 ## Usage
 
-### Loading the package
+### Walkthrough
+
+:movie_camera [Clay v2 pre-release with CIDER, 2023-12-17](https://www.youtube.com/watch?v=fd4kjlws6Ts)
+
+### Installing & loading
 
 Using [use-package](https://github.com/jwiegley/use-package) and [straight](https://github.com/radian-software/straight.el), you may load the package as follows:
 
