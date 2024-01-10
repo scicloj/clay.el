@@ -24,33 +24,33 @@
 
 ;;; Code:
 
-(defun clay/clean-buffer-file-name ()
+(defun clay-clean-buffer-file-name ()
   "Clean up the buffer file name in TRAMP situations.
 E.g., \"/ssh:myserver:/home/myuser/myfile\" `-->' \"/home/myuser/myfile\""
   (replace-regexp-in-string "^.*:"
                             ""
                             (buffer-file-name)))
 
-(defun clay/require ()
+(defun clay-require ()
   "Require the Clay API in your Clojure REPL."
   (interactive)
   (cider-interactive-eval "
     (require '[scicloj.clay.v2.api])")
   t)
 
-(defun clay/start ()
+(defun clay-start ()
   "Start Clay if not started yet."
   (interactive)
-  (clay/require)
+  (clay-require)
   (cider-interactive-eval "
     (scicloj.clay.v2.api/start!)")
   t)
 
-(defun clay/make-ns (format)
+(defun clay-make-ns (format)
   "Save this Clojure buffer, and render it at the desired FORMAT."
   (save-buffer)
-  (clay/require)
-  (let ((filename (clay/clean-buffer-file-name)))
+  (clay-require)
+  (let ((filename (clay-clean-buffer-file-name)))
     (when filename
       (cider-interactive-eval
        (concat "(scicloj.clay.v2.api/make! {:format "
@@ -59,36 +59,36 @@ E.g., \"/ssh:myserver:/home/myuser/myfile\" `-->' \"/home/myuser/myfile\""
                filename
                "\" })")))))
 
-(defun clay/make-ns-html ()
+(defun clay-make-ns-html ()
   "Save this Clojure buffer,
 render it as HTML,
 and show that in the browser view."
   (interactive)
-  (clay/require)
-  (clay/make-ns "[:html]"))
+  (clay-require)
+  (clay-make-ns "[:html]"))
 
-(defun clay/make-ns-quarto-html ()
+(defun clay-make-ns-quarto-html ()
   "Save this Clojure buffer,
 render it as Quarto,
 render that as HTML,
 and show that in the browser view."
   (interactive)
-  (clay/require)
-  (clay/make-ns "[:quarto :html]"))
+  (clay-require)
+  (clay-make-ns "[:quarto :html]"))
 
-(defun clay/make-ns-quarto-revealjs ()
+(defun clay-make-ns-quarto-revealjs ()
   "Save this Clojure buffer,
 render it as Quarto,
 render that as a reveal.js slideshow,
 and show that in the browser view."
   (interactive)
-  (clay/require)
-  (clay/make-ns "[:quarto :revealjs]"))
+  (clay-require)
+  (clay-make-ns "[:quarto :revealjs]"))
 
-(defun clay/make-form (code)
+(defun clay-make-form (code)
   "Render a given piece of Clojure CODE."
-  (clay/require)
-  (let ((filename (clay/clean-buffer-file-name)))
+  (clay-require)
+  (let ((filename (clay-clean-buffer-file-name)))
     (cider-interactive-eval
      (concat "(scicloj.clay.v2.api/make! {:format [:html] :source-path \""
              filename
@@ -96,15 +96,15 @@ and show that in the browser view."
              code
              ")})"))))
 
-(defun clay/make-last-sexp ()
+(defun clay-make-last-sexp ()
   "Render the last Clojure s-expression."
   (interactive)
-  (clay/make-form (cider-last-sexp)))
+  (clay-make-form (cider-last-sexp)))
 
-(defun clay/make-defun-at-point ()
+(defun clay-make-defun-at-point ()
   "Render the Clojure s-expression which is the defun-at-point."
   (interactive)
-  (clay/make-form (thing-at-point 'defun)))
+  (clay-make-form (thing-at-point 'defun)))
 
 (provide 'clay)
 ;;; clay.el ends here
