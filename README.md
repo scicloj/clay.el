@@ -4,6 +4,8 @@
 
 Emacs binding for the [Clay](https://scicloj.github.io/clay) Clojure tool for data visualization and literate programming
 
+:star: Note that API function names have changed (2024-01-10), see below. :star:
+
 
 ## Usage
 
