@@ -2,7 +2,7 @@
 
 [![License GPL 3][badge-license]](http://www.gnu.org/licenses/gpl-3.0.txt)
 
-Emacs binding for the [Clay](https://scicloj.github.io/clay) tool (data visualization and literate programming in Clojure)
+Emacs binding for the [Clay](https://scicloj.github.io/clay) Clojure tool for data visualization and literate programming
 
 
 ## Usage
