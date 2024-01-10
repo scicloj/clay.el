@@ -4,6 +4,7 @@
 
 ;; Author: daslu
 ;; Keywords: lisp
+;; URL: https://github.com/scicloj/clay.el
 
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -20,7 +21,7 @@
 
 ;;; Commentary:
 
-;; This package provides Emacs binding for the [Clay](https://scicloj.github.io/clay) Clojure tool
+;; This package provides Emacs binding for the [Clay](https://scicloj.github.io/clay) Clojure tool for data visualization and literate programming.
 
 ;;; Code:
 
