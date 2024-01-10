@@ -13,7 +13,9 @@ Emacs binding for the [Clay](https://scicloj.github.io/clay/) tool (data visuali
 
 ### Installing & loading
 
-Using [use-package](https://github.com/jwiegley/use-package) and [straight](https://github.com/radian-software/straight.el), you may load the package as follows:
+Soon, this package will hopefulyl be [MELPA](https://melpa.org/). Till then, you may install & load it in the following ways using [use-package](https://github.com/jwiegley/use-package).
+
+Using [straight](https://github.com/radian-software/straight.el), you may load the package as follows:
 
 ```elisp
 (use-package clay
@@ -23,7 +25,7 @@ Using [use-package](https://github.com/jwiegley/use-package) and [straight](http
              :repo "scicloj/clay.el"))
 ```
 
-Using [use-package](https://github.com/jwiegley/use-package) and [vc-use-package](https://github.com/slotThe/vc-use-package), you may load the package as follows:
+Using [vc-use-package](https://github.com/slotThe/vc-use-package), you may load the package as follows:
 
 ```elisp
 (use-package clay
