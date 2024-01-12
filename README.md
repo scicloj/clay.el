@@ -15,7 +15,7 @@ Emacs binding for the [Clay](https://scicloj.github.io/clay) Clojure tool for da
 
 ### Installing & loading
 
-Soon, this package will hopefully be [MELPA](https://melpa.org/). Till then, you may install & load it in the following ways using [use-package](https://github.com/jwiegley/use-package).
+Soon, this package will hopefully be in [MELPA](https://melpa.org/). Till then, you may install & load it in the following ways using [use-package](https://github.com/jwiegley/use-package).
 
 Using [straight](https://github.com/radian-software/straight.el), you may load the package as follows:
 
