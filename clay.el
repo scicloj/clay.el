@@ -91,12 +91,12 @@ E.g., \"/ssh:myserver:/home/myuser/myfile\" `-->' \"/home/myuser/myfile\""
              ")})"))))
 
 (defun clay-make-last-sexp ()
-  "Render the last Clojure s-expression."
+  "Render the last Clojure form before the cursor."
   (interactive)
   (clay-make-form (cider-last-sexp)))
 
 (defun clay-make-defun-at-point ()
-  "Render the Clojure s-expression which is the defun-at-point."
+  "Render the top-level Clojure form at the cursor."
   (interactive)
   (clay-make-form (thing-at-point 'defun)))
 

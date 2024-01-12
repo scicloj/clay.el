@@ -43,8 +43,8 @@ Using [vc-use-package](https://github.com/slotThe/vc-use-package), you may load 
   | `clay-make-ns-html`            | save clj buffer, render it as html, and show that in the browser view                                        |
   | `clay-make-ns-quarto-html`     | save clj buffer, render it as quarto, render that as html, and show that in the browser view                 |
   | `clay-make-ns-quarto-revealjs` | save clj buffer, render it as quarto, render that as a revealjs slideshow, and show that in the browser view |
-  | `clay-make-last-sexp`          | render the last s-expression                                                                                 |
-  | `clay-make-defun-at-point`     | render the [defun-at-point](https://www.emacswiki.org/emacs/ThingAtPoint)                                    |
+  | `clay-make-last-sexp`          | render the last Clojure form before the cursor                                                               |
+  | `clay-make-defun-at-point`     | render the the top-level Clojure form at the cursor                                                          |
 
 ## License
 
