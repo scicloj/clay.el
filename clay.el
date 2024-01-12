@@ -22,7 +22,7 @@
 
 ;;; Commentary:
 
-;; This package provides Emacs binding for the [Clay](https://scicloj.github.io/clay) Clojure tool for data visualization and literate programming.
+;; This package provides Emacs bindings for the [Clay](https://scicloj.github.io/clay) Clojure tool for data visualization and literate programming.
 
 ;;; Code:
 
