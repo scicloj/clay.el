@@ -37,14 +37,14 @@ Using [vc-use-package](https://github.com/slotThe/vc-use-package), you may load 
 ### API
   
   The package offers the following functions, that you may wish to create keybindings for:
-  | name                           | function                                                                                                     |
-  |--------------------------------|--------------------------------------------------------------------------------------------------------------|
-  | `clay-start`                   | start clay if not started yet                                                                                |
-  | `clay-make-ns-html`            | save clj buffer, render it as html, and show that in the browser view                                        |
-  | `clay-make-ns-quarto-html`     | save clj buffer, render it as quarto, render that as html, and show that in the browser view                 |
-  | `clay-make-ns-quarto-revealjs` | save clj buffer, render it as quarto, render that as a revealjs slideshow, and show that in the browser view |
-  | `clay-make-last-sexp`          | render the last Clojure form before the cursor                                                               |
-  | `clay-make-defun-at-point`     | render the the top-level Clojure form at the cursor                                                          |
+  | name                           | function                                                                                                      |
+  |--------------------------------|---------------------------------------------------------------------------------------------------------------|
+  | `clay-start`                   | Start clay if not started yet.                                                                                |
+  | `clay-make-ns-html`            | Save clj buffer, render it as html, and show that in the browser view.                                        |
+  | `clay-make-ns-quarto-html`     | Save clj buffer, render it as quarto, render that as html, and show that in the browser view.                 |
+  | `clay-make-ns-quarto-revealjs` | Save clj buffer, render it as quarto, render that as a revealjs slideshow, and show that in the browser view. |
+  | `clay-make-last-sexp`          | Render the last Clojure form before the cursor.                                                               |
+  | `clay-make-defun-at-point`     | Render the the top-level Clojure form at the cursor.                                                          |
 
 ## License
 
