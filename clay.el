@@ -1,4 +1,4 @@
-;;; clay.el --- Emacs commands for the Clay tool for literate programming and data visualization in Clojure  -*- lexical-binding: t; -*-
+;;; clay.el --- Emacs commands Clay - literate in Clojure  -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2023 Scicloj
 
