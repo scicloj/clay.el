@@ -3,7 +3,7 @@
 ;; Copyright (C) 2023 Scicloj
 
 ;; Author: daslu
-;; Keywords: lisp
+;; Keywords: clojure
 ;; URL: https://github.com/scicloj/clay.el
 ;; Version: 1.2
 
