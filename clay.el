@@ -27,6 +27,8 @@
 
 ;;; Code:
 
+(require 'cider)
+
 (defun clay-clean-buffer-file-name ()
   "Clean up the buffer file name in TRAMP situations.
 E.g., \"/ssh:myserver:/home/myuser/myfile\" `-->' \"/home/myuser/myfile\""
