@@ -24,7 +24,7 @@
 
 ;;; Commentary:
 
-;; Emacs commands for the Clay tool for literate programming and data visualization in Clojure
+;; Emacs commands for the Clay tool for literate programming in Clojure
 
 ;;; Code:
 
@@ -32,7 +32,7 @@
 
 (defun clay-clean-buffer-file-name ()
   "Clean up the buffer file name in TRAMP situations.
-E.g., \"/ssh:myserver:/home/myuser/myfile\" `-->' \"/home/myuser/myfile\""
+E.g., \"/ssh:myserver:/home/myuSER/myfile\" `-->' \"/home/myuser/myfile\""
   (replace-regexp-in-string "^.*:"
                             ""
                             (buffer-file-name)))
