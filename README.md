@@ -13,27 +13,11 @@ Emacs binding for the [Clay](https://scicloj.github.io/clay) Clojure tool for da
 
 :movie_camera: [Clay v2 pre-release with CIDER, 2023-12-17](https://www.youtube.com/watch?v=fd4kjlws6Ts)
 
-### Installing & loading
+### Installing
 
-Soon, this package will hopefully be in [MELPA](https://melpa.org/). Till then, you may install & load it in the following ways using [use-package](https://github.com/jwiegley/use-package).
+The Clay package is in [MELPA](https://melpa.org/):
+[![MELPA](https://melpa.org/packages/clay-badge.svg)](https://melpa.org/#/clay)
 
-Using [straight](https://github.com/radian-software/straight.el), you may load the package as follows:
-
-```elisp
-(use-package clay
-  :straight (clay
-             :type git
-             :host github
-             :repo "scicloj/clay.el"))
-```
-
-Using [vc-use-package](https://github.com/slotThe/vc-use-package), you may load the package as follows:
-
-```elisp
-(use-package clay
-  :vc (:fetcher github :repo scicloj/clay.el))
-```
-  
 ### API
   
   The package offers the following functions, that you may wish to create keybindings for:
