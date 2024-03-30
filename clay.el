@@ -104,7 +104,7 @@ Show that in the browser view."
 (defun clay-make-defun-at-point ()
   "Render the top-level Clojure form at the cursor."
   (interactive)
-  (clay-make-form (thing-at-point 'defun)))
+  (clay-make-form (cider-defun-at-point)))
 
 (provide 'clay)
 ;;; clay.el ends here
