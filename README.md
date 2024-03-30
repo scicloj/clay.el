@@ -30,8 +30,8 @@ After [enabling MELPA installations](https://github.com/melpa/melpa?tab=readme-o
   | `clay-make-ns-html`            | Save clj buffer, render it as html, and show that in the browser view.                                        |
   | `clay-make-ns-quarto-html`     | Save clj buffer, render it as quarto, render that as html, and show that in the browser view.                 |
   | `clay-make-ns-quarto-revealjs` | Save clj buffer, render it as quarto, render that as a revealjs slideshow, and show that in the browser view. |
-  | `clay-make-last-sexp`          | Render the last Clojure form before the cursor.                                                               |
-  | `clay-make-defun-at-point`     | Render the the top-level Clojure form at the cursor.                                                          |
+  | `clay-make-last-sexp`          | Render the last Clojure form before the cursor (using the format specified by Clay defaults or user configuration).                                                               |
+  | `clay-make-defun-at-point`     | Render the the top-level Clojure form at the cursor (using the format specified by Clay defaults or user configuration).                                                          |
 
 ## License
 
