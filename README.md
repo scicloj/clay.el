@@ -16,7 +16,10 @@ Emacs binding for the [Clay](https://scicloj.github.io/clay) Clojure tool for da
 ### Installing
 
 The Clay package is in [MELPA](https://melpa.org/):
-[![MELPA](https://melpa.org/packages/clay-badge.svg)](https://melpa.org/#/clay)
+
+![MELPA](https://melpa.org/packages/clay-badge.svg)](https://melpa.org/#/clay)
+
+After [enabling MELPA installations](https://github.com/melpa/melpa?tab=readme-ov-file#usage) in your Emacs setup, you may install it using: `M-x package-refresh-contents` and then `M-x package-install`.
 
 ### API
   
