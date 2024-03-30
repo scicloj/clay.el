@@ -90,7 +90,7 @@ Show that in the browser view."
   (clay-require)
   (let ((filename (clay-clean-buffer-file-name)))
     (cider-interactive-eval
-     (concat "(scicloj.clay.v2.api/make! {:format [:html] :source-path \""
+     (concat "(scicloj.clay.v2.api/make! {:source-path \""
              filename
              "\" :single-form (quote "
              code
