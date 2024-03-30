@@ -97,12 +97,12 @@ Show that in the browser view."
              ")})"))))
 
 (defun clay-make-last-sexp ()
-  "Render the last Clojure form before the cursor."
+  "Render the last Clojure form before the cursor (using the format specified by Clay defaults or user configuration)."
   (interactive)
   (clay-make-form (cider-last-sexp)))
 
 (defun clay-make-defun-at-point ()
-  "Render the top-level Clojure form at the cursor."
+  "Render the top-level Clojure form at the cursor (using the format specified by Clay defaults or user configuration)."
   (interactive)
   (clay-make-form (cider-defun-at-point)))
 
