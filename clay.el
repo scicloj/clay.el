@@ -92,7 +92,7 @@ Show that in the browser view."
     (cider-interactive-eval
      (concat "(scicloj.clay.v2.api/make! {:source-path \""
              filename
-             "\" :single-form (quote "
+             "\" :base-source-path nil :single-form (quote "
              code
              ")})"))))
 
