@@ -61,7 +61,7 @@ E.g., \"/ssh:myserver:/home/myuSER/myfile\" `-->' \"/home/myuser/myfile\""
       (cider-interactive-eval
        (concat "(scicloj.clay.v2.api/make! {:format "
                format
-               " :source-path \""
+               ":base-source-path nil :source-path \""
                filename
                "\" })")))))
 
@@ -90,9 +90,9 @@ Show that in the browser view."
   (clay-require)
   (let ((filename (clay-clean-buffer-file-name)))
     (cider-interactive-eval
-     (concat "(scicloj.clay.v2.api/make! {:source-path \""
+     (concat "(scicloj.clay.v2.api/make! {:base-source-path nil :source-path \""
              filename
-             "\" :base-source-path nil :single-form (quote "
+             "\":single-form (quote "
              code
              ")})"))))
 

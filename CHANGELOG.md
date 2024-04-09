@@ -1,6 +1,9 @@
 # Change Log
 All notable changes to this project will be documented in this file. This change log follows the conventions of [keepachangelog.com](http://keepachangelog.com/).
 
+## [1.5] - 2024-04-09
+- making sure `:base-source-path` is nil in all make calls (since they all use full paths)
+
 ## [1.4] - 2024-04-09
 - making sure `:base-source-path` is nil when making a single form
 
