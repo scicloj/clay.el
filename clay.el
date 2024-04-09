@@ -5,7 +5,7 @@
 ;; Author: daslu
 ;; Keywords: lisp
 ;; URL: https://github.com/scicloj/clay.el
-;; Version: 1.3
+;; Version: 1.4
 
 ;; Package-Requires: ((emacs "26.1") (cider "1.0"))
 
