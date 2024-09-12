@@ -7,7 +7,7 @@
 ;; URL: https://github.com/scicloj/clay.el
 ;; Version: 1.5
 
-;; Package-Requires: ((emacs "26.1") (cider "1.0"))
+;; Package-Requires: ((emacs "27.1") (cider "1.0"))
 
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -29,82 +29,83 @@
 ;;; Code:
 
 (require 'cider)
+(require 'tramp)
 
-(defun clay-clean-buffer-file-name ()
-  "Clean up the buffer file name in TRAMP situations.
-E.g., \"/ssh:myserver:/home/myuSER/myfile\" `-->' \"/home/myuser/myfile\""
-  (replace-regexp-in-string "^.*:"
-                            ""
-                            (buffer-file-name)))
+
+(defgroup clay nil
+  "Clay Emacs integration."
+  :prefix "clay-"
+  :group 'applications
+  :link '(url-link :tag "GitHub" "https://github.com/scicloj/clay.el"))
+
+;; These variables are not intended to be customized,
+;; but can be overridden for hotfixes.
+(defvar clay-api-ns
+  "scicloj.clay.v2.api"
+  "Clay API default namespace.")
+
+(defvar clay-require-form
+  (format "(require '[%s])" clay-api-ns))
+
+(defvar clay-start-form
+  (format "(%s/start!)" clay-api-ns))
+
+(defvar clay-ns-fmt
+  (format
+   "(%s/make! {:format %%s :base-source-path nil :source-path \"%%s\"})"
+   clay-api-ns))
+
+(defvar clay-form-fmt
+  (format
+   "(%s/make! {:base-source-path nil :source-path \"%%s\" :single-form (quote %%s)})"
+   clay-api-ns))
 
 (defun clay-require ()
   "Require the Clay API in your Clojure REPL."
   (interactive)
-  (cider-interactive-eval "
-    (require '[scicloj.clay.v2.api])")
-  t)
+  (cider-interactive-eval clay-require-form))
 
 (defun clay-start ()
   "Start Clay if not started yet."
   (interactive)
   (clay-require)
-  (cider-interactive-eval "
-    (scicloj.clay.v2.api/start!)")
-  t)
+  (cider-interactive-eval clay-start-form))
 
-(defun clay-make-ns (format)
-  "Save this Clojure buffer, and render it at the desired FORMAT."
-  (save-buffer)
+(defun clay-eval-from-file (fmt code &optional save)
+  "Eval CODE, formatted with FMT, optionally SAVE before evaluation."
+  (when save
+	(save-buffer))
   (clay-require)
-  (let ((filename (clay-clean-buffer-file-name)))
-    (when filename
-      (cider-interactive-eval
-       (concat "(scicloj.clay.v2.api/make! {:format "
-               format
-               ":base-source-path nil :source-path \""
-               filename
-               "\" })")))))
+  (when-let ((filename (tramp-file-local-name (buffer-file-name))))
+    (cider-interactive-eval
+	 (format fmt filename code))))
 
 (defun clay-make-ns-html ()
   "Save this Clojure buffer, render it as HTML, and show that in the browser view."
   (interactive)
-  (clay-require)
-  (clay-make-ns "[:html]"))
+  (clay-eval-from-file clay-ns-fmt "[:html]" 'save))
 
 (defun clay-make-ns-quarto-html ()
   "Save this Clojure buffer, render it as Quarto, render that as HTML.
 Show that in the browser view."
   (interactive)
-  (clay-require)
-  (clay-make-ns "[:quarto :html]"))
+  (clay-eval-from-file clay-ns-fmt "[:quarto :html]" 'save))
 
 (defun clay-make-ns-quarto-revealjs ()
   "Save this Clojure buffer, render it as Quarto, render that as reveal.js.
 Show that in the browser view."
   (interactive)
-  (clay-require)
-  (clay-make-ns "[:quarto :revealjs]"))
-
-(defun clay-make-form (code)
-  "Render a given piece of Clojure CODE."
-  (clay-require)
-  (let ((filename (clay-clean-buffer-file-name)))
-    (cider-interactive-eval
-     (concat "(scicloj.clay.v2.api/make! {:base-source-path nil :source-path \""
-             filename
-             "\":single-form (quote "
-             code
-             ")})"))))
+  (clay-eval-from-file clay-ns-fmt "[:quarto :revealjs]" 'save))
 
 (defun clay-make-last-sexp ()
   "Render the last Clojure form before the cursor (using the format specified by Clay defaults or user configuration)."
   (interactive)
-  (clay-make-form (cider-last-sexp)))
+  (clay-eval-from-file clay-form-fmt (cider-last-sexp)))
 
 (defun clay-make-defun-at-point ()
   "Render the top-level Clojure form at the cursor (using the format specified by Clay defaults or user configuration)."
   (interactive)
-  (clay-make-form (cider-defun-at-point)))
+  (clay-eval-from-file clay-form-fmt (cider-defun-at-point)))
 
 (provide 'clay)
 ;;; clay.el ends here
