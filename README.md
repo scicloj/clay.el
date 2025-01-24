@@ -37,6 +37,6 @@ After [enabling MELPA installations](https://github.com/melpa/melpa?tab=readme-o
 
 Clay.el is distributed under the GNU General Public License, version 3.
 
-Copyright © 2024 Scicloj
+Copyright © 2025 Scicloj
 
 [badge-license]: https://img.shields.io/badge/license-GPL_3-green.svg
