@@ -45,11 +45,19 @@ E.g., \"/ssh:myserver:/home/myuSER/myfile\" `-->' \"/home/myuser/myfile\""
   t)
 
 (defun clay-start ()
-  "Start Clay if not started yet."
+  "Start Clay to serve content in a web browser, if not started yet."
   (interactive)
   (clay-require)
   (cider-interactive-eval "
     (scicloj.clay.v2.api/start!)")
+  t)
+
+(defun clay-stop ()
+  "Stop Clay."
+  (interactive)
+  (clay-require)
+  (cider-interactive-eval "
+    (scicloj.clay.v2.api/stop!)")
   t)
 
 (defun clay-make-ns (format)
@@ -105,6 +113,32 @@ Show that in the browser view."
   "Render the top-level Clojure form at the cursor (using the format specified by Clay defaults or user configuration)."
   (interactive)
   (clay-make-form (cider-defun-at-point)))
+
+(defcustom clay-keymap-prefix "C-c C-c"
+  "The keymap prefix for `clay-mode'."
+  :type '(string)
+  :group 'clay)
+
+(defvar-local clay-mode-map
+  (let ((map (make-sparse-keymap)))
+    (define-key map (kbd (concat clay-keymap-prefix " C-e")) #'clay-make-last-sexp)
+    (define-key map (kbd (concat clay-keymap-prefix " C-M-x")) #'clay-make-defun-at-point)
+    (define-key map (kbd (concat clay-keymap-prefix " h")) #'clay-make-ns-html)
+    (define-key map (kbd (concat clay-keymap-prefix " q h")) #'clay-make-ns-quarto-html)
+    (define-key map (kbd (concat clay-keymap-prefix " q r")) #'clay-make-ns-quarto-revealjs)
+    map)
+  "Keymap for `clay-mode'.")
+
+(define-minor-mode clay-mode
+  "Minor mode for easily calling Clay functions."
+  :init-value nil
+  :lighter " Clay"
+  :keymap clay-mode-map
+  :group 'clay
+  ;; require clay ns automatically
+  (when (and clay-mode
+	     (cider-connected-p))
+    (clay-require)))
 
 (provide 'clay)
 ;;; clay.el ends here
