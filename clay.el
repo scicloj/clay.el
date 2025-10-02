@@ -52,6 +52,14 @@ E.g., \"/ssh:myserver:/home/myuSER/myfile\" `-->' \"/home/myuser/myfile\""
     (scicloj.clay.v2.api/start!)")
   t)
 
+(defun clay-stop ()
+  "Stop Clay."
+  (interactive)
+  (clay-require)
+  (cider-interactive-eval "
+    (scicloj.clay.v2.api/stop!)")
+  t)
+
 (defun clay-make-ns (format)
   "Save this Clojure buffer, and render it at the desired FORMAT."
   (save-buffer)
