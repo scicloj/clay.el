@@ -106,13 +106,18 @@ Show that in the browser view."
   (interactive)
   (clay-make-form (cider-defun-at-point)))
 
-(defvar clay-mode-map
+(defcustom clay-keymap-prefix "C-c C-c"
+  "The keymap prefix for `clay-mode'."
+  :type '(string)
+  :group 'clay)
+
+(defvar-local clay-mode-map
   (let ((map (make-sparse-keymap)))
-    (define-key map (kbd "C-c C-M-c C-e") #'clay-make-last-sexp)
-    (define-key map (kbd "C-c C-M-c C-M-x") #'clay-make-defun-at-point)
-    (define-key map (kbd "C-c C-M-c h") #'clay-make-ns-html)
-    (define-key map (kbd "C-c C-M-c q h") #'clay-make-ns-quarto-html)
-    (define-key map (kbd "C-c C-M-c q r") #'clay-make-ns-quarto-revealjs)
+    (define-key map (kbd (concat clay-keymap-prefix " C-e")) #'clay-make-last-sexp)
+    (define-key map (kbd (concat clay-keymap-prefix " C-M-x")) #'clay-make-defun-at-point)
+    (define-key map (kbd (concat clay-keymap-prefix " h")) #'clay-make-ns-html)
+    (define-key map (kbd (concat clay-keymap-prefix " q h")) #'clay-make-ns-quarto-html)
+    (define-key map (kbd (concat clay-keymap-prefix " q r")) #'clay-make-ns-quarto-revealjs)
     map)
   "Keymap for `clay-mode'.")
 
