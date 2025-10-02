@@ -23,15 +23,15 @@ After [enabling MELPA installations](https://github.com/melpa/melpa?tab=readme-o
 
 ### API
   
-  The package offers the following functions, that you may wish to create keybindings for:
-  | name                           | function                                                                                                      |
-  |--------------------------------|---------------------------------------------------------------------------------------------------------------|
-  | `clay-start`                   | Start clay if not started yet.                                                                                |
-  | `clay-make-ns-html`            | Save clj buffer, render it as html, and show that in the browser view.                                        |
-  | `clay-make-ns-quarto-html`     | Save clj buffer, render it as quarto, render that as html, and show that in the browser view.                 |
-  | `clay-make-ns-quarto-revealjs` | Save clj buffer, render it as quarto, render that as a revealjs slideshow, and show that in the browser view. |
-  | `clay-make-last-sexp`          | Render the last Clojure form before the cursor (using the format specified by Clay defaults or user configuration).                                                               |
-  | `clay-make-defun-at-point`     | Render the the top-level Clojure form at the cursor (using the format specified by Clay defaults or user configuration).                                                          |
+  The package offers the following functions and a minor mode whose keymap is customizable via variable `clay-keymap-prefix`:
+  | name                          | keybinding    | function                                                                                                                 |
+  |-------------------------------|---------------|--------------------------------------------------------------------------------------------------------------------------|
+  | `clay-start`                  |               | Start clay if not started yet.                                                                                           |
+  | `clay-make-ns-html`           | C-c C-c h     | Save clj buffer, render it as html, and show that in the browser view.                                                   |
+  | `clay-make-ns-quarto-html`    | C-c C-c q h   | Save clj buffer, render it as quarto, render that as html, and show that in the browser view.                            |
+  | `clay-make-ns-quarto-revealjs`| C-c C-c q r   | Save clj buffer, render it as quarto, render that as a revealjs slideshow, and show that in the browser view.            |
+  | `clay-make-last-sexp`         | C-c C-c C-e   | Render the last Clojure form before the cursor (using the format specified by Clay defaults or user configuration).      |
+  | `clay-make-defun-at-point`    | C-c C-c C-M-x | Render the the top-level Clojure form at the cursor (using the format specified by Clay defaults or user configuration). |
 
 ## License
 
