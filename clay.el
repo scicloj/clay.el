@@ -48,13 +48,13 @@ E.g., \"/ssh:myserver:/home/myuSER/myfile\" `-->' \"/home/myuser/myfile\""
 (defun clay-make (filename code &optional assoc-repls)
   "Prepare call to Clay scicloj.clay.v2.api/make! to render CODE from FILENAME and pass connection strings for other REPLs from ASSOC-REPLS."
   (concat clay-require
-          (concat "
+          "
     (scicloj.clay.v2.api/make! {:base-source-path nil :source-path \""
-                  filename
-                  "\" :single-form (quote " code ") "
-                  (when assoc-repls
-                    assoc-repls)
-                  "})")))
+          filename
+          "\" :single-form (quote " code ") "
+          (when assoc-repls
+            assoc-repls)
+          "})"))
 
 (defun clay-make-file (filename format &optional assoc-repls)
   "Prepare call to Clay scicloj.clay.v2.api/make! to render FILENAME with FORMAT and pass connection strings for other REPLs from ASSOC-REPLS."
