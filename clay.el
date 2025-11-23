@@ -78,7 +78,8 @@ E.g., \"/ssh:myserver:/home/myuSER/myfile\" `-->' \"/home/myuser/myfile\""
   (let ((babashka-repl (clay-find-repl 'babashka cider-repls)))
     (when babashka-repl
       (with-current-buffer babashka-repl
-        (format ":babashka-nrepl \"%s:%s\" "
+        (format ":babashka-nrepl-host \"%s\"
+                 :babashka-nrepl-port %s"
                 (plist-get nrepl-endpoint :host)
                 (plist-get nrepl-endpoint :port))))))
 
