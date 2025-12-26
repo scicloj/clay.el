@@ -37,6 +37,7 @@ E.g., \"/ssh:myserver:/home/myuSER/myfile\" `-->' \"/home/myuser/myfile\""
                             ""
                             (buffer-file-name)))
 
+;;;###autoload
 (defun clay-require ()
   "Require the Clay API in your Clojure REPL."
   (interactive)
@@ -44,6 +45,7 @@ E.g., \"/ssh:myserver:/home/myuSER/myfile\" `-->' \"/home/myuser/myfile\""
     (require '[scicloj.clay.v2.api])")
   t)
 
+;;;###autoload
 (defun clay-start ()
   "Start Clay if not started yet."
   (interactive)
