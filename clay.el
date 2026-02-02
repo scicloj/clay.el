@@ -44,6 +44,7 @@ E.g., \"/ssh:myserver:/home/myuSER/myfile\" `-->' \"/home/myuser/myfile\""
     (require '[scicloj.clay.v2.api])")
   t)
 
+;;;###autoload
 (defun clay-start ()
   "Start Clay if not started yet."
   (interactive)
@@ -52,6 +53,7 @@ E.g., \"/ssh:myserver:/home/myuSER/myfile\" `-->' \"/home/myuser/myfile\""
     (scicloj.clay.v2.api/start!)")
   t)
 
+;;;###autoload
 (defun clay-make-ns (format)
   "Save this Clojure buffer, and render it at the desired FORMAT."
   (save-buffer)
